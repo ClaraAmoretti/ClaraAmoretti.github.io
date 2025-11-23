@@ -1,0 +1,106 @@
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    top: 7vh;
+}
+
+.hoverImageCss {
+    background-image: url("../images/AVATAR_Default.png");
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+.hoverImageCss:hover {
+    background-image: url("../images/AVATAR_Hover.png");
+}
+
+.nameMain{
+    font-family: 'MaisonNeueBold', sans-serif;
+    font-size: 4rem;
+}
+
+.birthdate {
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: 2rem;
+}
+
+.content {
+  font-family: 'MaisonNeueLight', sans-serif;
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 0.3em; 
+  max-width: 50vw;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  display: inline;
+}
+
+.contentDiv{
+    max-width: 50vw;
+}
+.highlight {
+  font-family: 'CooperBTBook', sans-serif;
+  display: inline;
+}
+
+.btnContact {
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        position: relative;
+    }
+    .nameMain{
+        visibility: hidden;
+        height: 0;
+    }
+
+    .birthdate {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        font-size: 1rem;
+        max-width: 90vw;
+    }
+    .contentDiv {
+        font-size: 1rem;
+        max-width: 90vw;
+    }
+
+    .hoverImageCss {
+        width: clamp(50px, 40vw, 200px);
+        height: clamp(50px, 40vw, 200px);
+    }
+
+    .btnContact {
+        visibility: visible;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--font-color);
+        color: var(--background-color);
+        width: 90vw;
+        min-height: 3vh;
+        border-radius: 40px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .btnContact a {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        font-size: 4vw;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--background-color);
+    }
+}

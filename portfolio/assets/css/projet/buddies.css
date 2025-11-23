@@ -1,0 +1,131 @@
+/* === IMAGES GÉNÉRALES === */
+.imageContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 90vh;
+  width: auto;
+  position: relative;
+  z-index: -1;
+}
+
+/* par défaut : les images plein écran */
+.imageContainer > img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* exceptions : images à l’intérieur de la troisième slide */
+.imageContainer .thirdSlide img {
+  height: auto;
+}
+
+/* === CONFIGURATION SPÉCIFIQUE === */
+.imageContainer img:first-child {
+  width: 100vw;
+}
+
+.imageContainer img:nth-child(2) {
+  height: 50vh;
+  margin-left: 3vw;
+}
+
+.imageContainer img:nth-child(3) {
+  justify-items: start;
+}
+
+/* === TROISIÈME SLIDE === */
+.thirdSlide {
+  display: flex;
+  flex-direction: column;
+  height: 75vh; /* occupe une grande partie de la hauteur */
+  width: 75vw;
+  max-width: 75vw;
+}
+
+/* Image du haut — prend 50 % de la hauteur */
+.thirdSlide > img:first-child {
+  height: 50%;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Bloc du bas — deux images côte à côte */
+.thirdSlide .imgDiv {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2vw;
+  width: 100%;
+}
+
+/* Images du bas — partagent l’espace */
+.thirdSlide .imgDiv img {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+  /* images générales inchangées */
+  .imageContainer > img {
+    width: 100vw;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+
+  .imageContainer img:first-child {
+    width: 100vw;
+  }
+
+  .imageContainer > img:nth-child(2) {
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    object-fit: contain;
+  }
+
+  /* === TROISIÈME SLIDE SUR MOBILE — PLUS GRANDE QUE AVANT === */
+  .thirdSlide {
+    width: 100vw;
+    max-width: 100vw;
+
+    /* augmentation taille */
+    padding: 8vh 5vw;         /* plus d’air */
+    height: auto;             /* laisse respirer */
+    box-sizing: border-box;
+  }
+
+  /* image du haut → plus grande */
+  .thirdSlide > img:first-child {
+    width: 100%;
+    max-height: 60vh;         /* avant 40–50vh → plus grand */
+    object-fit: contain;
+    margin-bottom: 3vh;
+  }
+
+  /* bloc du bas → plus grand aussi */
+  .thirdSlide .imgDiv {
+    width: 100%;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6vw;                 /* un peu plus large */
+  }
+
+  .thirdSlide .imgDiv img {
+    flex: 1 1 0;
+    width: 48%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+

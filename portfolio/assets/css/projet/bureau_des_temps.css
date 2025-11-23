@@ -1,0 +1,17 @@
+.imageContainer img:first-child {
+    width: 100vw;
+}
+
+.imageContainer img:last-child {
+    width: 50vw;
+}
+
+@media (max-width: 768px) {
+    .imageContainer img:first-child {
+        width: 100%;
+    }
+
+    .imageContainer img:last-child {
+        width: 100%;
+    }
+}

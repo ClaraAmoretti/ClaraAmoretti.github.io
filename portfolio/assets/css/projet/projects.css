@@ -1,0 +1,360 @@
+header {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: row;          
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.linkContainer {
+  display: none;
+}
+
+.mainCursorLeft {
+  cursor: url('../../cursor/fleche-gauche.png') 16 16, auto;
+}
+
+.mainCursorRight {
+  cursor: url('../../cursor/fleche-droite.png') 16 16, auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.return-button {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  left: 20px;
+  top: 20px;
+  gap: 10px;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  width: auto;
+  z-index: 110;
+}
+
+.return-button svg {
+  width: auto;
+  height: 2.5vh;
+}
+
+.return-button p {
+  position: relative;
+  font-family: 'MaisonNeueBook', sans-serif;
+  font-size: var(--font-size-default);
+  color: var(--font-color);
+  margin: auto;
+  align-items: center;
+  justify-self: center;
+  top: 4px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100vh;
+  width: auto;
+  position: relative;
+}
+
+.imageContainer img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.navContainer {
+  position: fixed;
+  bottom: 8vh;
+  left: 2vw;
+  right: 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 90;
+}
+
+.nav-btn {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--font-color);
+  font-family: 'MaisonNeueBook', sans-serif;
+  font-size: 1rem;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 2vw;
+  width: 3vw;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+.nav-btn svg {
+  width: 3vw;
+  height: auto;
+  min-width: 24px;
+  stroke: var(--font-color);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn p {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-btn:hover p {
+  opacity: 1;
+}
+
+.previous-btn:hover {
+  width: 11vw;
+}
+
+.next-btn:hover {
+  width: 10vw;
+}
+
+.previous-btn {
+  justify-content: flex-start;
+}
+
+.next-btn {
+  justify-content: flex-end;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  z-index: 100;
+  transform: translateY(calc(100% - 7vh));
+  height: 7vh;
+  transition: transform 0.5s ease, height 0.5s ease;
+  border-top: 1px solid var(--font-color);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--font-color);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2vh 2vw;
+  font-family: "CooperBTLight", sans-serif;
+  font-size: calc(1.2 * var(--font-size-default));
+  color: var(--font-color);
+  transition: color 0.3s ease;
+}
+
+.description {
+  max-width: 80vw;
+  margin: 0 2vw 1vh;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-family: 'MaisonNeueBook', sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+/* ===================== */
+/*  HOVER = DESKTOP ONLY */
+/* ===================== */
+@media (min-width: 769px) {
+
+  footer:hover {
+    transform: translateY(0);
+    height: 15vh;
+  }
+
+  footer:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  footer:hover .title {
+    color: var(--accent-color, var(--font-color));
+  }
+
+  footer:hover ~ .navContainer {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* ===================== */
+/*      MOBILE STYLE     */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  header {
+    display: block;
+  }
+
+  .nav-btn,
+  .previous-btn,
+  .next-btn,
+  .return-button {
+    display: none;
+  }
+
+  main {
+    height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    top: 14vh;
+  }
+
+  .imageContainer{
+    align-items: flex-start;
+  }
+
+  .imageContainer img {
+    height: 75vh;
+  }
+
+  .linkContainer {
+    position: fixed;
+    top: 7vh;
+    width: 100%;
+    padding: 0 4vw 0 4vw;
+    background: var(--background-color);
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .textLink {
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: calc(0.9 * var(--font-size-default));
+  }
+
+  .bullet {
+    color: #F8A08D;
+  }
+
+  .date {
+    font-family: 'MaisonNeueLight', sans-serif;
+    font-size: calc(0.58 * var(--font-size-default));
+    color: var(--font-color);
+  }
+
+  footer {
+    border-radius: 20px 20px 0 0;
+    background: var(--background-color);
+    border-top: none;
+    transform: translateY(calc(100% - 7vh));
+    height: 7vh;
+  }
+
+  footer .title {
+    display: none;
+  }
+
+  footer .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .arrow {
+    position: relative;
+    width: 48px;
+    height: 16px;
+    margin: 0 auto;
+  }
+
+  .arrow::before,
+  .arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 51%;
+    height: 2px;
+    background: #F34A1F;
+  }
+
+  .arrow::before {
+    left: 0;
+    transform-origin: right center;
+    transform: translateY(-50%) rotate(-20deg);
+  }
+
+  .arrow::after {
+    right: 0;
+    transform-origin: left center;
+    transform: translateY(-50%) rotate(20deg);
+  }
+
+  footer .description {
+    max-width: 100%;
+    font-size: calc(0.5 * var(--font-size-default));
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    margin: 3vw 3vh;
+  }
+
+  /* ouverture / fermeture via .is-open uniquement en mobile */
+  footer.is-open {
+    height: auto;
+    padding-bottom: 2vh;
+    transform: translateY(0);
+  }
+
+  footer.is-open .description {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  footer.is-open .arrow::before {
+    width: 0;
+  }
+
+  footer.is-open .arrow::after {
+    left: 50%;
+    right: auto;
+    width: 40px;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}

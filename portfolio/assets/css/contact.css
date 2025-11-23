@@ -1,0 +1,95 @@
+main {
+    position: relative !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    gap: 40px;
+}
+
+.hoverImageCss {
+    background-image: url("../images/AVATAR_Default.png");
+    width: clamp(120px, 20vw, 200px);
+    height: clamp(120px, 20vw, 200px);
+    background-size: cover;
+    background-position: center;
+}
+
+.hoverImageCss:hover {
+    background-image: url("../images/AVATAR_Hover.png");
+}
+
+.text p {
+   font-family: 'MaisonNeueBold', sans-serif;
+   font-size: 2rem;
+   margin: 0;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'MaisonNeueBook', sans-serif;
+    align-items: center;
+}
+
+.contactText a {
+    font-family: 'MaisonNeueBook', sans-serif;
+    font-size: 1rem;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        gap: 30px;
+        padding: 0 5vw;
+    }
+
+    .hoverImageCss {
+        width: clamp(80px, 40vw, 200px);
+        height: clamp(80px, 40vw, 200px);
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 auto;     
+    }
+
+    .text p {
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+        text-align: left;
+        width: 100%;
+    }
+
+    .contactText {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contactText a {
+        font-size: clamp(1rem, 3.5vw, 1.1rem);
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
