@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   main.addEventListener("wheel", (e) => {
     e.preventDefault();
-    main.scrollLeft += e.deltaY * 2.5;
+    // molette verticale accélérée, glissement horizontal du pavé tactile tel quel
+    main.scrollLeft += e.deltaY * 2.5 + e.deltaX;
   }, { passive: false });
 
   document.addEventListener("mousemove", (e) => {
@@ -30,10 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll("video");
   videos.forEach(video => {
     video.style.pointerEvents = "auto"
-    video.addEventListener("click", (e) => {
-      console.log("video clicked");
-      
-      e.stopPropagation()});
+    video.addEventListener("click", (e) => e.stopPropagation());
   });
 
   document.addEventListener("click", (e) => {

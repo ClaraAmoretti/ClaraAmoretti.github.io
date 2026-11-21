@@ -1,0 +1,10 @@
+/* Les visuels ont du texte en bas : on les arrête au-dessus du footer (7vh) */
+@media (min-width: 769px) {
+  .imageContainer {
+    height: 93vh;
+  }
+
+  .imageContainer img {
+    height: 93vh;
+  }
+}

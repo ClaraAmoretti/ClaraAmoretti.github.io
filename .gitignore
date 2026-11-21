@@ -1,0 +1,6 @@
+# Ne garder que le site
+/*
+!/portfolio/
+!/index.html
+!/.github/
+!/.gitignore

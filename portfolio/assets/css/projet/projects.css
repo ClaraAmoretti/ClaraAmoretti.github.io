@@ -82,6 +82,12 @@ main {
   justify-content: space-between;
   align-items: center;
   z-index: 90;
+  /* la barre fait toute la largeur : seuls les boutons doivent capter les clics (sinon elle bloque les vidéos) */
+  pointer-events: none;
+}
+
+.navContainer .nav-btn {
+  pointer-events: auto;
 }
 
 .nav-btn {
